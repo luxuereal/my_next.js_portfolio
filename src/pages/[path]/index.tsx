@@ -1,7 +1,12 @@
 import { useRouter } from "next/router";
 
-import Layout from "@/components/layout"
-
+import Layout from "@/components/layout";
+import Home from "@/components/home";
+import About from "@/components/about";
+import Experience from "@/components/experience";
+import Projects from "@/components/projects";
+import Contact from "@/components/contact";
+import NotFound from "@/components/notFound";
 
 const Page = () => {
 
@@ -9,26 +14,20 @@ const Page = () => {
 
   const page = router.query.path;
 
-  console.log(page)
-
   return(
     <Layout>
       {
         page === 'home' 
-          ? <>
-              <h2 className="font-mono text-3xl bg-gradient-to-r from-purple-500 to-pink-500 inline-block text-transparent bg-clip-text">I'm Viktor Splavnyk.</h2>
-              <br />
-              <h1 className="font-mono text-3xl bg-gradient-to-r from-purple-500 to-pink-500 inline-block text-transparent bg-clip-text">Experienced Web | Electron App Developer</h1>
-            </>
+          ? <Home />
           : page === 'about'
-            ? <h1>About</h1>
+            ? <About />
             : page === 'experience'
-              ? <h1>Experience</h1>
+              ? <Experience />
               : page === 'projects'
-                ? <h1>Projects</h1>
+                ? <Projects />
                 : page === 'contact'
-                  ? <h1>Contact</h1>
-                  : <h1>Not Found</h1>
+                  ? <Contact />
+                  : <NotFound />
       }
     </Layout>
   )
