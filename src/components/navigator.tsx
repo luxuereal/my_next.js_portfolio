@@ -1,13 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+
+import Button from "./materials/button";
 
 const Navigator = () => {
+
+  const router = useRouter();
+  
+
   return (
-    <div className="pr-24">
-      <Link href="/home"><span className="px-6 py-2 text-xl text-white/70 font-sans">Home</span></Link>
-      <Link href="/about"><span className="px-6 py-2 text-xl text-white/70 font-sans">About</span></Link>
-      <Link href="/experience"><span className="px-6 py-2 text-xl text-white/70 font-sans">Experience</span></Link>
-      <Link href="/projects"><span className="px-6 py-2 text-xl text-white/70 font-sans">Projects</span></Link>
-      <Link href="/contact"><span className="px-6 py-2 text-xl text-white/70 font-sans">Contact</span></Link>
+    <div className="pr-24 flex gap-4">
+      <Link href="/home"><Button name='Home' /></Link>
+      <Link href="/about"><Button name='About' /></Link>
+      <Link href="/experience"><Button name='Experience' /></Link>
+      <Link href="/projects"><Button name='Projects' /></Link>
+      <Link href="/contact"><Button name='Contact' /></Link>
     </div>
   )
 }
