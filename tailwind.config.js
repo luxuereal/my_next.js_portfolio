@@ -12,6 +12,20 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        'yatra': ['var(--font-yatra)'],
+        'courgette': ['var(--font-courgette)']
+      },
+      animation: {
+        "text-gradient": "text-gradient 1.5s linear infinite"
+      },
+      keyframes: {
+        "text-gradient": {
+          "to": {
+            "backgroundPosition": "200% center"
+          }
+        }
+      }
     },
   },
   plugins: [],
